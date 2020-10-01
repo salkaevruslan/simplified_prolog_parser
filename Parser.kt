@@ -37,9 +37,9 @@ class Parser constructor(private var str: String, private var silent: Boolean = 
     private fun parseRelation(): Boolean {
         skipWhitespace()
         val initPos = pos
-        if (!parseHead() || !parseSymbol('.')) {
+        if (!parseID() || !parseSymbol('.')) {
             pos = initPos
-            if (!parseHead() || !parseCork() || !parseBody() || !parseSymbol('.')) {
+            if (!parseID() || !parseCork() || !parseDisjunction() || !parseSymbol('.')) {
                 pos = initPos
                 return false
             }
@@ -47,9 +47,6 @@ class Parser constructor(private var str: String, private var silent: Boolean = 
         nextToLastSuccessPos = pos
         return true
     }
-
-    private fun parseHead() = parseID()
-    private fun parseBody() = parseDisjunction()
 
     private fun parseDisjunction(): Boolean {
         skipWhitespace()
