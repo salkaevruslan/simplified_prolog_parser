@@ -1,7 +1,7 @@
 # Simplified prolog parser
 ## Сборка:
 ```
-kotlinc Test.kt Parser.kt -include-runtime -d parser.jar
+kotlinc Main.kt Parser.kt -include-runtime -d parser.jar
 kotlinc Test.kt Parser.kt -include-runtime -d test.jar
 ```
 Если нужно, как поставить kotlin можно найти тут:
