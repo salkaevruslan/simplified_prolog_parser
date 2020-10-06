@@ -9,7 +9,7 @@ https://kotlinlang.org/docs/tutorials/command-line.html
 ## Запуск:
 ### Сам парсер:
 ```
-java -jar parser.jar
+java -jar parser.jar filename.txt
 ```
 ### Тесты:
 ```
